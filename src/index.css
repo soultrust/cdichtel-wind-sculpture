@@ -7,7 +7,166 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  display: flex;
+  justify-content: center;
+}
+
+.panes-container {
+  aspect-ratio: 7/5;
+  position: relative;
+  height: 80vh;
+  border: 1px solid #f00;
+}
+
+.col {
+  position: absolute;
+	height: 100%;
+	width: 14.2857142857%;
+	perspective: 800px;
+  transform-style: preserve-3d;
+  border: 1px solid #00f;
+  transform: translateX(-50%);
+}
+
+.col-axis {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pane {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  border: 3px solid #000;
+}
+
+.pane-panel {
+  width: 100%;
+  /* height: 100px; */
+  border: 1px solid #000;
+  /* transform: rotate(45deg); */
+}
+
+.col-A {
+  left: 7.14285714286%;
+}
+
+.col-B {
+  left: 14.2857142857%;
+}
+
+.col-C {
+  left: 21.4285714286%;
+}
+
+.col-D {
+  left: 28.5714285714%;
+}
+
+.col-E {
+  left: 35.7142857143%;
+}
+
+.col-F {
+  left: 42.8571428572%;
+}
+
+.col-G {
+  left: 50%;
+}
+
+.col-H {
+  left: 57.1428571429%;
+}
+
+.col-I {
+  left: 64.2857142857%;
+}
+
+.col-J {
+  left: 71.4285714286%;
+}
+
+.col-K {
+  left: 78.5714285715%;
+}
+
+.col-L {
+  left: 85.7142857143%;
+}
+
+.col-M {
+  left: 92.8571428572%;
+}
+
+.pane-5A,
+.pane-5C,
+.pane-5E,
+.pane-5G,
+.pane-5I,
+.pane-5K,
+.pane-5M {
+  top: 50%;
+}
+
+.pane-4B,
+.pane-4D,
+.pane-4F,
+.pane-4H,
+.pane-4J,
+.pane-4L {
+  top: 40%;
+}
+
+.pane-6B,
+.pane-6D,
+.pane-6F,
+.pane-6H,
+.pane-6J,
+.pane-6L {
+  top: 60%;
+}
+
+.pane-3C,
+.pane-3E,
+.pane-3G,
+.pane-3I,
+.pane-3K {
+  top: 30%;
+}
+
+.pane-7C,
+.pane-7E,
+.pane-7G,
+.pane-7I,
+.pane-7K {
+  top: 70%;
+}
+
+.pane-2D,
+.pane-2F,
+.pane-2H,
+.pane-2J {
+  top: 20%;
+}
+
+.pane-8D,
+.pane-8F,
+.pane-8H,
+.pane-8J {
+  top: 80%;
+}
+
+.pane-1E,
+.pane-1I {
+  top: 10%;
+}
+
+.pane-9E,
+.pane-9I {
+  top: 90%;
 }
