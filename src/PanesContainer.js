@@ -1,4 +1,3 @@
-import classes from './PanesContainer.module.css';
 import Pane from './Pane';
 
 const PanesContainer = (props) => {
