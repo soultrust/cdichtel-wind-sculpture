@@ -1,11 +1,10 @@
 import { useEffect } from 'react';
-import './App.css';
 import PanesContainer from './PanesContainer';
 
 function calculatePaneSize() {
   const bodyStyles = document.body.style;
-  const colWidth = document.querySelector('.col').offsetWidth;
-  bodyStyles.setProperty('--pane-width', `${colWidth * .68}px`);
+  const panesContainerWidth = document.querySelector('.panes-container').offsetWidth;
+  bodyStyles.setProperty('--pane-width', `${panesContainerWidth/13 * 1.28}px`);
 }
 
 function App() {

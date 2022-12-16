@@ -20,26 +20,7 @@ body {
   aspect-ratio: 7/5;
   position: relative;
   height: 80vh;
-  border: 1px solid #f00;
-}
-
-.col {
-  position: absolute;
-	height: 100%;
-	width: 14.2857142857%;
-  border: 1px solid #ddd;
-  transform: translateX(-50%);
-}
-
-.col-axis {
-  position: absolute;
-  width: 0;
-  height: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  perspective: 800px;
-  transform-style: preserve-3d;
-  animation: spinning 10s linear infinite;
+  margin-top: 1rem;
 }
 
 @keyframes spinning {
@@ -49,9 +30,12 @@ body {
 
 .pane {
   position: absolute;
-  width: 0px;
-  height: 0px;
   transform-style: preserve-3d;
+  animation: spinning 10s linear infinite;
+  perspective: 1000px;
+  transform-origin: 0;
+  width: 0;
+  height: 0;
 }
 
 .pane-panel {
@@ -59,34 +43,41 @@ body {
   aspect-ratio: 1/1;
   width: var(--pane-width);
   border: 1px solid #000;
-  transform: translateX(-50%) translateY(-50%) rotate(45deg);
   backface-visibility: hidden;
-  background-size: cover;
   transform-style: preserve-3d;
   cursor: pointer;
+  display: block;
+  transform: translateX(-50%) translateY(-50%) rotateZ(45deg);
 }
 
 .pane-front .bg-holder {
-  position: absolute;
-  background-image: url(images/gray-black.svg);
-  background-size: cover;
-  display: block;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  width: 100%;
-  height: 100%;
-  
-}
-
-.pane-back .bg-holder {
   position: absolute;
   background-image: url(images/red-black.svg);
   backface-visibility: hidden;
   background-size: cover;
   width: 100%;
   height: 100%;
-  transform: rotateY(0deg);
+  transform: rotateZ(0deg);
   display: block;
+  transform-style: preserve-3d;
+}
+
+.pane-back .bg-holder {
+  position: absolute;
+  background-image: url(images/red-black.svg);
+  background-position: center;
+  backface-visibility: hidden;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(0deg);
+  display: block;
+  transform-style: preserve-3d;
+  color: #fff;
+}
+
+.pane-back {
+  transform: translateX(-50%) translateY(-50%) rotateZ(45deg) rotateY(180deg);
 }
 
 .col-A {
@@ -141,70 +132,38 @@ body {
   left: 92.8571428572%;
 }
 
-.pane-5A,
-.pane-5C,
-.pane-5E,
-.pane-5G,
-.pane-5I,
-.pane-5K,
-.pane-5M {
-  top: 50%;
-}
-
-.pane-4B,
-.pane-4D,
-.pane-4F,
-.pane-4H,
-.pane-4J,
-.pane-4L {
-  top: 40%;
-}
-
-.pane-6B,
-.pane-6D,
-.pane-6F,
-.pane-6H,
-.pane-6J,
-.pane-6L {
-  top: 60%;
-}
-
-.pane-3C,
-.pane-3E,
-.pane-3G,
-.pane-3I,
-.pane-3K {
-  top: 30%;
-}
-
-.pane-7C,
-.pane-7E,
-.pane-7G,
-.pane-7I,
-.pane-7K {
-  top: 70%;
-}
-
-.pane-2D,
-.pane-2F,
-.pane-2H,
-.pane-2J {
-  top: 20%;
-}
-
-.pane-8D,
-.pane-8F,
-.pane-8H,
-.pane-8J {
-  top: 80%;
-}
-
-.pane-1E,
-.pane-1I {
+.row-1 {
   top: 10%;
 }
 
-.pane-9E,
-.pane-9I {
+.row-3 {
+  top: 30%;
+}
+
+.row-4 {
+  top: 40%;
+}
+
+.row-5 {
+  top: 50%;
+}
+
+.row-6 {
+  top: 60%;
+}
+
+.row-7 {
+  top: 70%;
+}
+
+.row-2 {
+  top: 20%;
+}
+
+.row-8 {
+  top: 80%;
+}
+
+.row-9 {
   top: 90%;
 }

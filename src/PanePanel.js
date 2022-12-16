@@ -5,8 +5,10 @@ const PanePanel = (props) => {
   const [rotationVal, setRotationVal] = useState(0);
 
   const handleClick = (evt) => {
-    if (evt.target.classList.contains('bg-holder')) {
-      var st = window.getComputedStyle(evt.target, null);
+    if (evt.currentTarget.classList.contains('pane-panel')) {
+      
+      const bgHolder = evt.currentTarget.querySelector('.bg-holder');
+      var st = window.getComputedStyle(bgHolder, null);
       var tr = st.getPropertyValue("-webkit-transform") ||
         st.getPropertyValue("-moz-transform") ||
         st.getPropertyValue("-ms-transform") ||
@@ -14,13 +16,7 @@ const PanePanel = (props) => {
         st.getPropertyValue("transform") ||
         "fail...";
 
-        // With rotate(30deg)...
-        // matrix(0.866025, 0.5, -0.5, 0.866025, 0px, 0px)
-        console.log('Matrix: ' + tr);
-
-        // rotation matrix - http://en.wikipedia.org/wiki/Rotation_matrix
-
-    
+      console.log('Matrix: ' + tr);
 
       var values = tr.split('(')[1];
       values = values.split(')')[0];
@@ -41,8 +37,7 @@ const PanePanel = (props) => {
       console.log('Rotate: ' + angle + 'deg');
 
       const newRotation = angle + 90;
-      console.log(newRotation);
-      evt.target.style.transform = `rotate(${newRotation}deg)`;
+      bgHolder.style.transform = `rotateZ(${newRotation}deg)`;
     }
   }
 
