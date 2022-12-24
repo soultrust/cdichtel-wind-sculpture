@@ -20,7 +20,7 @@ body {
   aspect-ratio: 7/5;
   position: relative;
   height: 80vh;
-  margin-top: 1rem;
+  margin-top: 3%;
 }
 
 @keyframes spinning {
@@ -52,7 +52,6 @@ body {
 
 .pane-front .bg-holder {
   position: absolute;
-  background-image: url(images/red-black.svg);
   backface-visibility: hidden;
   background-size: cover;
   width: 100%;
@@ -64,7 +63,6 @@ body {
 
 .pane-back .bg-holder {
   position: absolute;
-  background-image: url(images/red-black.svg);
   background-position: center;
   backface-visibility: hidden;
   background-size: cover;
@@ -166,4 +164,44 @@ body {
 
 .row-9 {
   top: 90%;
+}
+
+.progress-bar {
+  height: 5px;
+  background: green;
+  margin-top: 20px;
+}
+
+.img-menu {
+  position: absolute;
+  bottom: 0;
+  height: var(--pane-width);
+  display: flex;
+}
+
+.img-wrap {
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  width: var(--pane-width);
+  background-size: cover;
+}
+
+#file-upload {
+  display: none;
+}
+
+.file-upload {
+  width: var(--pane-width);
+  aspect-ratio: 1/1;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+}
+
+.file-upload .bi-plus-lg {
+  width: 80%;
+}
+
+.output {
+  position: absolute;
 }

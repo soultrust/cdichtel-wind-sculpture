@@ -1,8 +1,4 @@
-import { useState } from 'react';
-
-const PanePanel = (props) => {
-  const side = props.side;
-  const [rotationVal, setRotationVal] = useState(0);
+const PanePanel = ({ side, img }) => {
 
   const handleClick = (evt) => {
     if (evt.currentTarget.classList.contains('pane-panel')) {
@@ -42,8 +38,8 @@ const PanePanel = (props) => {
   }
 
   return (
-    <div className={`pane-panel pane-${props.side}`} onClick={handleClick}>
-      <div className="bg-holder"></div>
+    <div className={`pane-panel pane-${side}`} onClick={handleClick}>
+      <div className="bg-holder" style={{ backgroundImage: `url(${img})`}}></div>
     </div>
   );
 };

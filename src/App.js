@@ -1,5 +1,8 @@
-import { useEffect } from 'react';
-import PanesContainer from './PanesContainer';
+import { useEffect, useState } from 'react';
+import PanesContainer from './components/PanesContainer';
+import ImageMenu from './components/ImageMenu';
+import { collection, getDocs } from 'firebase/firestore'; 
+import { projectFirestore } from './firebase/config';
 
 function calculatePaneSize() {
   const bodyStyles = document.body.style;
@@ -8,6 +11,9 @@ function calculatePaneSize() {
 }
 
 function App() {
+  const [paneImg, setPaneImg] = useState(null);
+  const [docs, setDocs] = useState([]);
+
   useEffect(() => {
     calculatePaneSize();
     window.addEventListener('resize', calculatePaneSize);
@@ -16,9 +22,27 @@ function App() {
     }
   }, []);
 
+  const loadDocs = () => {
+    let documents = [];
+    
+    getDocs(collection(projectFirestore, 'images'))
+      .then((snap) => {
+        snap.forEach(doc => {
+          documents.push({ ...doc.data(), id: doc.id })
+        });
+        setDocs(documents);
+      });
+  }
+
+  useEffect(() => {
+    loadDocs();
+      
+  }, []);
+
   return (
     <div className="app">
-      <PanesContainer />
+      <PanesContainer paneImg={paneImg} />
+      <ImageMenu setPaneImg={setPaneImg} loadDocs={loadDocs} docs={docs} />
     </div>
   );
 }
