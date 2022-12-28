@@ -184,6 +184,7 @@ body {
   aspect-ratio: 1/1;
   width: var(--pane-width);
   background-size: cover;
+  position: relative;
 }
 
 #file-upload {
@@ -204,4 +205,41 @@ body {
 
 .output {
   position: absolute;
+}
+
+.swap,
+.delete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.delete {
+  border: 1px solid #f00;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.delete .bi-x-lg {
+  width: 80%;
+  transition: color .2s ease-out;
+}
+
+.delete:hover .bi-x-lg {
+  color: white;
+}
+
+.delete-mode-btn {
+  width: var(--pane-width);
+  aspect-ratio: 1/1;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+}
+
+.delete-mode-btn .bi-dash-lg {
+  width:70%;
 }

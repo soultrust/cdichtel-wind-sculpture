@@ -19,8 +19,6 @@ const PanePanel = ({ side, img }) => {
       values = values.split(',');
       var a = values[0];
       var b = values[1];
-      var c = values[2];
-      var d = values[3];
 
       var scale = Math.sqrt(a*a + b*b);
 
