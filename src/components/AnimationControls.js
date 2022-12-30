@@ -6,9 +6,9 @@ const AnimationControls = ({ animating, setAnimating }) => {
   };
 
   return (
-    <div>
+    <div className="anim-controls">
       <button onClick={handleToggle}>
-        toggle antimation
+        {animating ? 'PAUSE' : 'PLAY'}
       </button>
     </div>
   );

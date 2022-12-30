@@ -247,3 +247,10 @@ body {
 .delete-mode-btn .bi-dash-lg {
   width:70%;
 }
+
+.anim-controls {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--pane-width) + 1rem);
+}
