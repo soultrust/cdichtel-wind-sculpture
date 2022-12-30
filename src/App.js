@@ -15,6 +15,7 @@ function App() {
   const [paneImg, setPaneImg] = useState(null);
   const [docs, setDocs] = useState([]);
   const [animating, setAnimating] = useState(true);
+  const [side, setSide] = useState(true);
 
   useEffect(() => {
     calculatePaneSize();
@@ -42,9 +43,14 @@ function App() {
 
   return (
     <div className="app">
-      <PanesContainer paneImg={paneImg} animating={animating} />
+      <PanesContainer paneImg={paneImg} animating={animating} side={side} />
       <ImageMenu setPaneImg={setPaneImg} loadDocs={loadDocs} docs={docs} />
-      <AnimationControls animating={animating} setAnimating={setAnimating} />
+      <AnimationControls 
+        animating={animating} 
+        setAnimating={setAnimating} 
+        side={side} 
+        setSide={setSide} 
+      />
     </div>
   );
 }

@@ -40,6 +40,11 @@ body {
 
 .paused .pane {
   animation-play-state: paused;
+  transform: rotateY(0deg) !important;
+}
+
+.other-side .pane {
+  transform: rotateY(180deg) !important;
 }
 
 .pane-panel {
@@ -224,7 +229,6 @@ body {
   border: 1px solid #f00;
   display: flex;
   justify-content: center;
-  
 }
 
 .delete .bi-x-lg {
