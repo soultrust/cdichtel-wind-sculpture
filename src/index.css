@@ -38,6 +38,10 @@ body {
   height: 0;
 }
 
+.paused .pane {
+  animation-play-state: paused;
+}
+
 .pane-panel {
   position: absolute;
   aspect-ratio: 1/1;

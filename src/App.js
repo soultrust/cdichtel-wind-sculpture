@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import PanesContainer from './components/PanesContainer';
 import ImageMenu from './components/ImageMenu';
+import AnimationControls from './components/AnimationControls';
 import { collection, getDocs } from 'firebase/firestore'; 
 import { projectFirestore } from './firebase/config';
 
@@ -13,6 +14,7 @@ function calculatePaneSize() {
 function App() {
   const [paneImg, setPaneImg] = useState(null);
   const [docs, setDocs] = useState([]);
+  const [animating, setAnimating] = useState(true);
 
   useEffect(() => {
     calculatePaneSize();
@@ -40,8 +42,9 @@ function App() {
 
   return (
     <div className="app">
-      <PanesContainer paneImg={paneImg} />
+      <PanesContainer paneImg={paneImg} animating={animating} />
       <ImageMenu setPaneImg={setPaneImg} loadDocs={loadDocs} docs={docs} />
+      <AnimationControls animating={animating} setAnimating={setAnimating} />
     </div>
   );
 }

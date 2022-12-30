@@ -1,8 +1,8 @@
 import Pane from './Pane';
 
-const PanesContainer = ({ paneImg }) => {
+const PanesContainer = ({ paneImg, animating }) => {
   return (
-    <div className="panes-container">
+    <div className={`panes-container ${animating ? '' : 'paused'}`}>
       <Pane row="5" col="A" img={paneImg} />
       <Pane row="4" col="B" img={paneImg} />
       <Pane row="6" col="B" img={paneImg} />

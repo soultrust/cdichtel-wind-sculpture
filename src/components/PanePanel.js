@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const PanePanel = ({ side, img }) => {
+const PanePanel = ({ side, img, animating }) => {
   const [rotationVal, setRotationVal] = useState(0);
 
   const handleClick = (evt) => {
@@ -17,7 +17,8 @@ const PanePanel = ({ side, img }) => {
         style={{ 
           backgroundImage: `url(${img})`, 
           transform: `rotateZ(${rotationVal}deg)`
-        }}></div>
+        }}>
+      </div>
     </div>
   );
 };
