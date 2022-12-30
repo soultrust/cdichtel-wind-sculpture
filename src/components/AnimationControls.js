@@ -14,7 +14,7 @@ const AnimationControls = ({ animating, setAnimating, side, setSide }) => {
       <button onClick={handleToggle}>
         {animating ? 'PAUSE' : 'PLAY'}
       </button>
-      <button onClick={handleFlip}>
+      <button onClick={handleFlip} className="btn-flip">
         FLIP
       </button>
     </div>

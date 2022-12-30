@@ -2,7 +2,7 @@ import Pane from './Pane';
 
 const PanesContainer = ({ paneImg, animating, side }) => {
   return (
-    <div className={`panes-container ${animating ? '' : 'paused'} ${side ? '' : 'other-side'}`}>
+    <div className={`panes-container ${animating ? '' : side ? 'paused front-side' : 'paused back-side' }`}>
       <Pane row="5" col="A" img={paneImg} />
       <Pane row="4" col="B" img={paneImg} />
       <Pane row="6" col="B" img={paneImg} />

@@ -40,10 +40,13 @@ body {
 
 .paused .pane {
   animation-play-state: paused;
+}
+
+.front-side .pane {
   transform: rotateY(0deg) !important;
 }
 
-.other-side .pane {
+.back-side .pane {
   transform: rotateY(180deg) !important;
 }
 
@@ -257,4 +260,12 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: calc(var(--pane-width) + 1rem);
+}
+
+.btn-flip {
+  opacity: .5;
+}
+
+.paused ~ .anim-controls .btn-flip {
+  opacity: 1;
 }
